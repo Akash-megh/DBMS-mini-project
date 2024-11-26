@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Doctor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h2>Add Doctor</h2>
+    <form action="/add_doctor" method="POST">
+        <input type="text" name="Doctor_ID" placeholder="Doctor ID" required><br>
+        <input type="text" name="Name" placeholder="Name" required><br>
+        <input type="text" name="Specialization" placeholder="Specialization" required><br>
+        <input type="text" name="Phone" placeholder="Phone" required><br>
+        <input type="number" name="Experience" placeholder="Experience (Years)" required><br>
+        <button type="submit">Add Doctor</button>
+    </form>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+</html>

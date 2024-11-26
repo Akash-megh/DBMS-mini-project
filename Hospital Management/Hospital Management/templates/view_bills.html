@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Bills</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Bills List</h2>
+    <table border="1">
+        <tr>
+            <th>Bill ID</th>
+            <th>Appointment ID</th>
+            <th>Total Amount</th>
+            <th>Payment Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for bill in bills %}
+        <tr>
+            <td>{{ bill['Bill_ID'] }}</td>
+            <td>{{ bill['Appointment_ID'] }}</td>
+            <td>${{ bill['Total_Amount'] }}</td>
+            <td>{{ bill['Payment_Status'] }}</td>
+            <td>
+                <form action="/update_payment_status/{{ bill['Bill_ID'] }}" method="POST" style="display: inline;">
+                    <select name="Payment_Status">
+                        <option value="Pending" {% if bill['Payment_Status'] == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="Paid" {% if bill['Payment_Status'] == 'Paid' %}selected{% endif %}>Paid</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

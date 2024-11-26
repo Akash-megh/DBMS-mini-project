@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Display the logo -->
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Hospital Logo" width="200" />
+        <h1>Welcome to the Hospital Management System</h1>
+
+        <!-- List of options -->
+        <ul>
+            <li><a href="/view_patients">View Patients</a></li>
+            <li><a href="/add_patient">Add Patient</a></li>
+            <li><a href="/view_doctors">View Doctors</a></li>
+            <li><a href="/add_doctor">Add Doctor</a></li>
+            <li><a href="/view_bills">View Bills</a></li>
+            <li><a href="/generate_bill">Generate Bill</a></li>
+            <li><a href="/view_appointments">View Appointments</a></li>
+            <li><a href="/schedule_appointment">Schedule Appointment</a></li>
+        </ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

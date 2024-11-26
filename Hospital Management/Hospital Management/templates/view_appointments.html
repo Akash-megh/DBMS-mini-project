@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Appointments</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Appointments List</h2>
+    <table border="1">
+        <tr>
+            <th>Appointment ID</th>
+            <th>Patient ID</th>
+            <th>Doctor ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment['Appointment_ID'] }}</td>
+            <td>{{ appointment['Patient_ID'] }}</td>
+            <td>{{ appointment['Doctor_ID'] }}</td>
+            <td>{{ appointment['Date'] }}</td>
+            <td>{{ appointment['Time'] }}</td>
+            <td>{{ appointment['Status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

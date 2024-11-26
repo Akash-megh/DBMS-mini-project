@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h2>Schedule Appointment</h2>
+    <form action="/schedule_appointment" method="POST">
+        <input type="text" name="Appointment_ID" placeholder="Appointment ID" required><br>
+        <input type="text" name="Patient_ID" placeholder="Patient ID" required><br>
+        <input type="text" name="Doctor_ID" placeholder="Doctor ID" required><br>
+        <input type="date" name="Date" required><br>
+        <input type="time" name="Time" required><br>
+        <button type="submit">Schedule Appointment</button>
+    </form>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
